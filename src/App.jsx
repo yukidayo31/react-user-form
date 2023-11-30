@@ -32,7 +32,7 @@ function App() {
     },
     onSubmit: (user) => {
       axios
-        .post("https://react-user-form-db.vercel.app/accounts", {
+        .post("http://localhost:3000/accounts", {
           name: user.name,
           email: user.email,
           password: user.password,

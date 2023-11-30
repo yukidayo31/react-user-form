@@ -20,7 +20,7 @@ function Users() {
   const [accounts, setAccounts] = useState([]);
 
   useEffect(() => {
-    fetch("https://react-user-form-db.vercel.app/accounts")
+    fetch("http://localhost:3000/accounts")
       .then((res) => {
         return res.json();
       })
