@@ -38,7 +38,7 @@ function App() {
           password: user.password,
         })
         .then((res) => {
-          alert(JSON.stringify(user, null, 2));
+          // alert(JSON.stringify(user, null, 2));
           console.log(res);
           // props.getAccounts();
         })
