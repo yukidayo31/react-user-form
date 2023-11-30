@@ -11,6 +11,7 @@ import {
   Stack,
 } from "@chakra-ui/react";
 import "./App.css";
+import axios from "axios";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import MainNav from "./MainNav";
@@ -29,7 +30,22 @@ function App() {
       email: "",
       password: "",
     },
-    onSubmit: () => {
+    onSubmit: (user) => {
+      axios
+        .post("http://localhost:3000/accounts", {
+          name: user.name,
+          email: user.email,
+          password: user.password,
+        })
+        .then((res) => {
+          alert(JSON.stringify(user, null, 2));
+          console.log(res);
+          // props.getAccounts();
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+
       // Redirect to <link>Google</link> after submit
       alert("Account has been successfully registered!");
       window.location.href = "/users";
